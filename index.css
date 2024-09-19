@@ -1,0 +1,29 @@
+main {
+  min-height: 100vh;
+}
+
+.star {
+  position: relative;
+  height: 2rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+
+.star::before {
+  content: url(./icons/star.svg);
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.star:checked::before,
+.star:checked ~ .star::before {
+  content: url(./icons/star-fill.svg);
+}
+
+.star:hover::before,
+.star:hover ~ .star::before {
+  content: url(./icons/star-fill.svg) !important;
+}
